@@ -1,0 +1,390 @@
+/* VARS */
+:root{
+  --bgcolor: #313233;
+  --lightblue: #1ecd97;
+  --lightblue2 : #27f9b9;
+  --red : #cd1e38;
+  --menuhead : #E6EED6;
+  --buttontext : #034c35;
+  --blue : #B0D7FF;
+  --whitetransparent : rgba(255, 255, 255, 0.3);
+  --ltext : #dddbdb;
+  --moveto : #060242;
+}
+/* DOC */
+html,body{
+  margin: 0;
+  padding: 0;
+  color: var(--ltext);
+  font-size: 14px;
+}
+body{
+  background-color: #3c3d3f;
+  color: var(--ltext);
+}
+footer{
+  background-color: var(--bgcolor);
+  margin-top: 15px;
+  height: auto;
+  width: 100%;
+  padding: 5px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  text-align: right;
+  font-size: 12px;
+  color: var(--ltext);
+}
+hr{
+  border-color: var(--lightblue);
+}
+h1{
+  color: var(--lightblue);
+}
+h2{
+  text-align: center;
+  color: var(--lightblue);
+}
+h3{
+  text-align: left;
+  color: var(--lightblue);
+}
+a{
+  text-decoration: none;
+  color: var(--lightblue);
+}
+a:hover{
+  color: var(--lightblue2);
+}
+#topper{
+  background-color: var(--bgcolor);
+  padding: 2px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  color: var(--lightblue2);
+  width: 100%;
+}
+.mainContainer{
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.splashBoundaries{
+  display: table-cell;
+  vertical-align: middle;
+  height: inherit;
+  width: inherit;
+}
+.splashBox{
+  margin: auto;
+  background-color: var(--whitetransparent);
+  width: 75%;
+  height: 75%;
+  border-radius: 3px;
+  padding: 15px;
+  vertical-align: middle;
+  align-content: center;
+}
+.registerBox{
+  margin: auto;
+  background-color: var(--whitetransparent);
+  width: 75%;
+  border-radius: 3px;
+  padding: 15px;
+  vertical-align: middle;
+}
+.mapBakcground{
+  height: 10vw;
+  width: 10vw;
+  background-size: contain;
+}
+.mapBakcground img{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* DISPLAY HANDLER */
+.resDisplay{
+  text-align: justify;
+  margin-top: 24px;
+  background-color: var(--bgcolor);
+  margin-left: 20%;
+  width: 80%;
+}
+.display{
+  text-align: justify;
+  padding: 15px;
+  margin-top: 5px;
+  margin-left: 21%;
+  margin-right: 2%;
+  background-color: var(--bgcolor);
+  width: 75%;
+}
+/* MENU HANDLER */
+#menu{
+  float: left;
+  /*margin-top: 24px;*/
+  width: 20%;
+  background-color: var(--bgcolor);
+  vertical-align: top;
+  overflow: hidden;
+}
+/* STRINGS CSS */
+.wikiHeaderString{
+  font-size: 14px;
+  color: var(--blue);
+}
+.errorOutput{
+  color: var(--red);
+}
+.greenText{
+  color: var(--lightblue2);
+}
+.blueText{
+  color: var(--blue);
+}
+/* CURSOR HANDLING SPEC CLASSES */
+.cursorPointer{
+  cursor: pointer;
+}
+/* FORM HANDLING */
+.regFormInput{
+  width: 100%;
+  border: 0.2px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  background-color: transparent;
+  color: var(--lightblue2);
+  font-weight: bold;
+  cursor: pointer;
+}
+.regFormInput:focus{
+  outline: none!important;
+  border-color: var(--lightblue);
+}
+.regFormInput::placeholder{
+  color: var(--lightblue);
+  font-weight: bold;
+  opacity: 1;
+}
+/* TABLE HANDLING */
+.navTable{
+  font-size: 12px;
+  border-style: solid;
+  border-width: 0.5;
+  border-color: var(--whitetransparent);
+  border-spacing: 0;
+  padding: 5px;
+}
+.navStar{
+  vertical-align: middle;
+  text-align: center;
+}
+.navHeader{
+  color: var(--lightblue);
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+}
+.wikiHeader{
+  color: var(--lightblue);
+  font-weight: bold;
+  font-size: 16px;
+}
+.wikiTableHeader{
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--lightblue);
+  text-align: center;
+  text-transform: uppercase;
+}
+.wikiTable{
+  width: 100%;
+  font-size: 12px;
+  border-style: solid;
+  border-width: 0.5;
+  border-color: var(--whitetransparent);
+  padding: 5px;
+  vertical-align: middle;
+}
+.wikiTd{
+  padding: 5px;
+  text-align: center;
+  border-style: solid;
+  border-width: 0.1;
+  border-color: var(--whitetransparent);
+  color: var(--blue);
+}
+.tdResDisplay{
+  font-size: 10px;
+  padding: 3px 10px 3px 10px;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: var(--whitetransparent);
+  text-transform: uppercase;
+}
+.topperTable{
+  text-align: left;
+  font-size: 12px;
+  border-spacing: 25px 2px;
+}
+.tableCenter{
+  text-align: center;
+}
+.tdVerticalTop{
+  vertical-align: top;
+}
+.centeredFull{
+  width: 100%;
+  height: 100%;
+}
+.menuHead{
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--menuhead);
+}
+.menuTable{
+  width: 100%;
+}
+.menuEntries{
+  padding-left: 15px;
+}
+.td14px{
+  font-size: 14px;
+}
+/* BUTTONS */
+.button_nav{
+  font-size: 14px;
+  background-color: var(--moveto);
+  padding: 5px;
+  border-radius: 4px;
+  border-style: none;
+  cursor: pointer;
+  color: var(--ltext);
+}
+.button_ok{
+  font-size: 16px;
+  background: var(--lightblue);
+  padding: 5px;
+  border-radius: 3px;
+  border-style: none;
+  color: var(--buttontext);
+  cursor: pointer;
+}
+.button_notok{
+  font-size: 16px;
+  background: var(--red);
+  padding: 5px;
+  border-radius: 3px;
+  border-style: none;
+  color: white;
+}
+.button_register{
+  cursor: pointer;
+  background: var(--lightblue);
+  width: 60%;
+  font-size: 18px;
+  padding: 15px;
+  border-radius: 3px;
+  border-style: none;
+  color: white;
+}
+/* BUTTON A HREF LINKS */
+.greenHrefButton{
+  text-decoration: none;
+  padding: 15px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 250px;
+  height: 70px;
+  cursor: pointer;
+  margin: 0 auto;
+  border: 2px solid rgb(30,205,151);
+  -webkit-border-radius: 40px;
+  border-radius: 20px;
+  font: normal 37px/70px "Advent Pro", Helvetica, sans-serif;
+  color: rgb(30, 205, 151);
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  letter-spacing: 1px;
+  background: rgba(0,0,0,0);
+  -webkit-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+  -moz-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+  -o-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+  transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+}
+
+.greenHrefButton:hover {
+  color: rgba(255,255,255,1);
+  background: rgb(30, 205, 151);
+}
+.greenHrefButton:active {
+  border: 2px solid rgba(33,224,163,1);
+  background: rgba(33,224,163,1);
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+/* POPOUT */
+/* Popup container */
+.popout {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+/* The actual popup (appears on top) */
+.popout .popuptext {
+    word-break: normal;
+    visibility: hidden;
+    width: 400px;
+    max-height: 150px;
+    overflow: scroll;
+    background-color: #555;
+    color: var(--ltext);
+    text-align: justify;
+    border-radius: 6px;
+    border-color: var(--lightblue);
+    border-width: 0.5px;
+    border-style: solid;
+    padding: 5px 10px 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popout .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popout .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
