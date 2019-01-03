@@ -24,14 +24,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
   include ("functions/login_functions.php");
   if (!loginPlayer())
   {
-   $loginOutput = getString("wrong_login");
-   return;
+   //$loginOutput = getString("wrong_login");
+   header("Location: /Nomads/?view=login");
+   exit();
   }
   else
   {
 //   header("Location: /game_index.php?gameView=overview");
    header("Location: /Nomads/game_index.php?gameView=overview");
-   return;
+   exit();
   }
  }
 }
