@@ -64,7 +64,7 @@ exit("FEHLER: player_functions: function getPlayerLoc() #2");
       }
       else
       {
-exit("FEHLER: player_functions: function getPlayerLoc() #5");
+exit("FEHLER: player_functions: function getPlayerLoc() #4");
       }
      }
      // define out

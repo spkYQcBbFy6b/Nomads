@@ -1,5 +1,10 @@
 <?php
 // Changed to PDO 2018-12-15 by Karsten Maske
+// Changes 2019-01-02 by Karsten Maske: added defines due to install script and some changes that came with it.
+define('INCLUDESDIR','/includes/');
+define('CONNECTDATAFILE','dbConnectData.php');
+define('CONNECTDBFILE',INCLUDESDIR.CONNECTDATAFILE);
+define('CONNECTFILE',INCLUDESDIR.'dbConnect.php');
 
 session_start();
 date_default_timezone_set('Europe/Berlin');
@@ -10,7 +15,27 @@ error_reporting(E_ALL);
 include "engine/redirect.php";
 include "common/common_functions.php";
 //include "includes/dbConfig.php";
-include "includes/dbConnect.php";
+include('.'.CONNECTDBFILE); // "includes/dbConnect.php";
+
+if($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+ if ($_POST['login'] != null)
+ {
+  include ("functions/login_functions.php");
+  if (!loginPlayer())
+  {
+   $loginOutput = getString("wrong_login");
+   return;
+  }
+  else
+  {
+//   header("Location: /game_index.php?gameView=overview");
+   header("Location: /Nomads/game_index.php?gameView=overview");
+   return;
+  }
+ }
+}
+
 ?>
 <html>
 <?php include "includes/head.php";?>
@@ -26,6 +51,7 @@ if(!isset($_GET['view']))
 {
  $_GET['view']='splash';
 }
+
     $view = $_GET['view'];
     switch($view){
       case 'privacy':

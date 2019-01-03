@@ -142,6 +142,9 @@ exit("FEHLER: common_functions: function getUserSession()");
 }
 // --------------------------------------------------------------------------------------------------------------------------------------------
 // GET GAME SETTINGS
+// Changed 2019-01-02 by Karsten Maske
+// many changes (also the wrong error message), so commented out the original function for documentation.
+/*
 function getSetting($settingID)
 {
  include("includes/dbConnect.php");
@@ -157,5 +160,24 @@ function getSetting($settingID)
 exit("FEHLER: common_functions: function getUserSession()");
  }
 }
+*/
+function getSetting($settingName)
+{
+ include('includes/dbConnect.php');
+
+ $q1="SELECT `v` FROM `game_settings` WHERE `k`='".$settingName."'";
+ if($e1=$DB->query($q1))
+ {
+  $z1=$e1->fetch(PDO::FETCH_NUM);
+  return($z1[0]);
+ }
+ else
+ {
+exit("FEHLER: common_functions: function getSetting()");
+ }
+}
+
+
+
 // --------------------------------------------------------------------------------------------------------------------------------------------
 ?>

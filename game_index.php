@@ -1,5 +1,10 @@
 <?php
 // Changed to PDO 2018-12-15 by Karsten Maske
+// Changes 2019-01-02 by Karsten Maske: added defines due to install script and some changes that came with it.
+define('INCLUDESDIR','/includes/');
+define('CONNECTDATAFILE','dbConnectData.php');
+define('CONNECTDBFILE',INCLUDESDIR.CONNECTDATAFILE);
+define('CONNECTFILE',INCLUDESDIR.'dbConnect.php');
 
 session_start();
 date_default_timezone_set('Europe/Berlin');

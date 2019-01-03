@@ -1,10 +1,13 @@
 <?php
+
 if(!class_exists('NomadsPDO'))
 {
 class NomadsPDO extends PDO
 {
  private $engine;
  private $host;
+ private $port;
+ private $charset;
  private $db;
  private $user;
  private $pw;
@@ -13,21 +16,15 @@ class NomadsPDO extends PDO
  public function __construct()
  {
   $db=array();
-
-  $db['dbengine'] = 'mysql';
-  $db['dbhost'] = 'localhost';
-  $db['dbport'] = 3306;
-  $db['dbname'] = 'nomads';
-  $db['dbuser'] = 'nomads';
-  $db['dbuserpw'] = 'nomads';
-
+include(CONNECTDATAFILE);
   $this->engine = $db['dbengine'];
   $this->host = $db['dbhost'];
   $this->port = $db['dbport'];
   $this->db = $db['dbname'];
   $this->user = $db['dbuser'];
   $this->pw = $db['dbuserpw'];
-  $dns = $this->engine.':dbname='.$this->db.";charset=utf8;host=".$this->host;
+  $this->charset = $db['dbcharset'];
+  $dns=strtolower($this->engine).':dbname='.$this->db.";charset=".$this->charset.";host=".$this->host;
 
   try
   {
@@ -35,7 +32,7 @@ class NomadsPDO extends PDO
   }
   catch(Exception $e)
   {
-   exit('No SQL');
+   exit('No SQL. '.$e->getMessage());
   }
   $this->pw = '';
   $this->user = '';

@@ -24,7 +24,6 @@ exit("FEHLER: login_functions: function loginPlayer() #1");
  $uCheck=$e1->rowCount();
  $uA=$e1->fetch(PDO::FETCH_ASSOC);
  $uID = $uA['id'];
-
  $now = time();
  if ($uCheck > 0)
  {
@@ -72,5 +71,4 @@ exit("FEHLER: login_functions: function loginPlayer() #4");
   return(FALSE);
  }
 }
-// ------------------------------------------------------------------------------------------------------------------------------
 ?>

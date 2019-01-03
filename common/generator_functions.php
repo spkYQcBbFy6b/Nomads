@@ -1,5 +1,14 @@
 <?php
 // Changed to PDO 2018-12-14 by Karsten Maske 
+/*
+Changed getSetting
+ user_session_validity_minutes
+ number_of_default_map_tiles
+ star_spawn_percentage
+ star_gravity_factor
+ number_of_default_star_models
+ number_of_default_planet_models
+*/
 
 // CHECK IF MAP TILE EXITS OR IS DEFAULT
 function isMapThere($x,$y)
@@ -245,7 +254,7 @@ function createStarAndPlanets($x,$y,$mapID)
   $heat = mt_rand($heatMin,$heatMax);
 
   // get gravity
-  $gFactor = getSetting(4);
+  $gFactor = getSetting('star_gravity_factor');
   $gravity = round($diam / $gFactor);
 
   // get IMG
@@ -313,14 +322,14 @@ function genStarName()
 // GENERATE RANDOM STAR IMAGE
 function genStarIMG()
 {
- include("includes/dbConnect.php");
- return("star_model_".mt_rand(1,getSetting(5)));
+ include('includes/dbConnect.php');
+ return('star_model_'.mt_rand(1,getSetting('number_of_default_star_models')));
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // CALCULATE ODDS TO GENERATE STAR
 function odds_star()
 {
- $percent = getSetting(3);
+ $percent = getSetting('star_spawn_percentage');
  $negativeOdds = 100 - $percent;
  $counterYES = 0;
  $counterNO = 0;
@@ -354,8 +363,8 @@ function odds_star()
 // GENERATE MAP TILE IMAGE
 function genMapTileIMG()
 {
- include("includes/dbConnect.php");
- return("Maptile_".mt_rand(1,getSetting(2)));
+ include('includes/dbConnect.php');
+ return('Maptile_'.mt_rand(1,getSetting('number_of_default_map_tiles')));
 }
 // ------------------------------------------------------------------------------------------------------------------------------------------------------
 // MOVE TO TILE
