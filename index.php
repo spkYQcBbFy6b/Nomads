@@ -24,8 +24,7 @@ include "includes/dbConnect.php";
 <?php
 if(!isset($_GET['view']))
 {
- $_GET['view']='register';
- $_GET['view']='login';
+ $_GET['view']='splash';
 }
     $view = $_GET['view'];
     switch($view){
