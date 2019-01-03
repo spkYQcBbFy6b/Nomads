@@ -36,7 +36,7 @@ else
 $out='<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF_8">
+<meta charset="UTF-8">
 <title>Install Nomads browsergame</title>
 <style type="text/css">
 html,body{margin:0px; padding:0px;}
