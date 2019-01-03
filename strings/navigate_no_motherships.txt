@@ -3,4 +3,4 @@ Mother ships are essential to navigate.<br>
 You should buy one before coming to this page.<br>
 <br>
 <br>
-Check <a href='/game_index.php?gameView=galactic_market'>Galactic Market</a> for more information.
+Check <a href='Nomads/game_index.php?gameView=galactic_market'>Galactic Market</a> for more information.
