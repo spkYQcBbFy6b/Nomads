@@ -111,7 +111,7 @@ elseif($step==2)
  $a.="\$db['dbuser'] = '".$db['user']."';\n";
  $a.="\$db['dbuserpw'] = '".$db['userpw']."';\n";
  $a.="\$db['dbhost'] = '".$db['host']."';\n";
- $a.="\$db['dbengine'] = '".$db['engine']."';\n";
+ $a.="\$db['dbengine'] = strtolower('".$db['engine']."');\n";
  $a.="\$db['dbport'] = ".$db['port'].";\n";
  $a.="\$db['dbcharset'] = '".$db['charset']."';\n";
  $a.='?' . '>';
