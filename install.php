@@ -80,7 +80,7 @@ if($step==1)
    $out.='<tr><td>Database charset</td><td><input type="text" name="txDbcharset" value="utf8"></td></tr>';
    $out.='<tr><td>OK, let\'s go</td><td><button name="btnGo">GO!</button></td></tr>';
   $out.='</table>';
- $out.='<form>';
+ $out.='</form>';
 }
 elseif($step==2)
 {
@@ -198,7 +198,7 @@ elseif($step==5)
    $out.='<tr><td>Email</td><td><input type="email" name="txEm" placeholder="your emailadress"></td></tr>';
    $out.='<tr><td>OK, let\'s go</td><td><button name="btnGo">Create Account!</button></td></tr>';
   $out.='</table>';
- $out.='<form>';
+ $out.='</form>';
 
 
  $out.='<br><br>';
