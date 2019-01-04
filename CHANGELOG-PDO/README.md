@@ -2,6 +2,7 @@
 
 ## Version 2019-01-04
  Change in install.php: drivernames in lowercase ( 'MySQL' => 'mysql' )
+ typos in form-tags in install.php corrected
  
 ## Version 2019-01-03
 - Installation by install.php possible
